@@ -12,8 +12,7 @@
 		</div>
 	</c:if>
 	<c:url value="/usuario/editar" var="action" />
-	<form:form action="${action }" method="post"
-		commandName="usuario">
+	<form:form action="${action }" method="post" commandName="usuario">
 		<form:hidden path="codigo" />
 		<div class="form-group">
 			<form:label path="email">Email</form:label>
@@ -24,7 +23,7 @@
 			<form:input path="senha" cssClass="form-control" />
 		</div>
 		<div class="d-flex flex-row-reverse">
-		<input type="submit" value="Cadastrar" class="btn btn-primary">
+			<input type="submit" value="Cadastrar" class="btn btn-primary">
 		</div>
 	</form:form>
 </tags:template>

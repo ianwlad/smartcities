@@ -5,7 +5,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <tags:template title="Home">
-	<h1>Cadastro de produto</h1>
+	<h1>Cadastro de Loja</h1>
 	<c:if test="${ not empty msg }">
 		<div class="alert alert-success">
 			<strong>Successo!</strong> ${msg }
@@ -14,21 +14,10 @@
 	<c:url value="/produto/cadastrar" var="action" />
 	<form:form action="${action }" method="post" commandName="produto">
 		<div class="form-group">
-			<form:label path="nomeProduto">Nome do produto</form:label>
+			<form:label path="nomeProduto">Nome da loja</form:label>
 			<form:input path="nomeProduto" cssClass="form-control" />
 		</div>
-		<div class="form-group">
-			<form:label path="nomeMarca">Marca do produto</form:label>
-			<form:input path="nomeMarca" cssClass="form-control" />
-		</div>
-		<div class="form-group">
-			<form:label path="medida">Medida</form:label>
-			<form:input path="medida" cssClass="form-control" />
-		</div>
-		<div class="form-group">
-			<form:label path="preco">Preço</form:label>
-			<form:input path="preco" cssClass="form-control" />
-		</div>
+		
 		<div class="d-flex flex-row-reverse">
 			<input type="submit" value="Cadastrar" class="btn btn-error">
 		</div>

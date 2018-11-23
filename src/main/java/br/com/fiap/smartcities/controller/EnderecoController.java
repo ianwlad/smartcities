@@ -10,15 +10,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import br.com.fiap.smartcities.dao.EstacionamentoDAO;
-import br.com.fiap.smartcities.entity.Estacionamento;
+import br.com.fiap.smartcities.dao.EnderecoDAO;
+import br.com.fiap.smartcities.entity.Endereco;
 
 @Controller
-@RequestMapping("estacionamento")
-public class EstacionamentoController {
+@RequestMapping("endereco")
+public class EnderecoController {
 	
 	@Autowired
-	private EstacionamentoDAO dao;
+	private EnderecoDAO dao;
 	
 	@Transactional
 	@GetMapping("excluir/{id}")
@@ -29,48 +29,48 @@ public class EstacionamentoController {
 		}catch(Exception e) {
 			redirect.addFlashAttribute("msg", e.getMessage());
 		}
-		return "redirect:/estacionamento/listar";
+		return "redirect:/endereco/listar";
 	}
 	
 	@GetMapping("editar/{id}")
 	public ModelAndView abrirFormEdicao(@PathVariable("id") int codigo) {
-		return new ModelAndView("estacionamento/edicao").addObject("estacionamento", dao.buscar(codigo));
+		return new ModelAndView("endereco/edicao").addObject("endereco", dao.buscar(codigo));
 	}
 	
 	@Transactional
 	@PostMapping("editar")
-	public ModelAndView processarFormEdicao(Estacionamento estacionamento, RedirectAttributes attrs) {
+	public ModelAndView processarFormEdicao(Endereco endereco, RedirectAttributes attrs) {
 		try {
-		dao.atualizar(estacionamento);
+		dao.atualizar(endereco);
 		} catch (Exception e) {
-			return new ModelAndView("estacionamento/edicao").addObject("msg", e.getMessage());
+			return new ModelAndView("endereco/edicao").addObject("msg", e.getMessage());
 		}
 		attrs.addFlashAttribute("msg", "Atualizado!");
-		return new ModelAndView("redirect:/estacionamento/listar");
+		return new ModelAndView("redirect:/endereco/listar");
 	}
 	
 	@GetMapping("listar")
 	public ModelAndView listar() {
-		return new ModelAndView("estacionamento/lista").addObject("lista", dao.listar());
+		return new ModelAndView("endereco/lista").addObject("lista", dao.listar());
 	}
 
 
 	@GetMapping("cadastrar")
-	public String abrirForm(Estacionamento estacionamento) {
-		return "estacionamento/cadastro";
+	public String abrirForm(Endereco endereco) {
+		return "endereco/cadastro";
 		}
 
 	@Transactional
 	@PostMapping("cadastrar")
-	public ModelAndView processarForm(Estacionamento estacionamento, RedirectAttributes redirect) {
+	public ModelAndView processarForm(Endereco endereco, RedirectAttributes redirect) {
 		try {
-			dao.cadastrar(estacionamento);
+			dao.cadastrar(endereco);
 		} catch (Exception e) {
 			e.printStackTrace();
-			return new ModelAndView("estacionamento/cadastro");
+			return new ModelAndView("endereco/cadastro");
 		}
-		redirect.addFlashAttribute("msg", "Estacionamento cadastrado!");
-		return new ModelAndView("redirect:/estacionamento/cadastrar");
+		redirect.addFlashAttribute("msg", "Endereco cadastrado!");
+		return new ModelAndView("redirect:/endereco/cadastrar");
 	}
 
 

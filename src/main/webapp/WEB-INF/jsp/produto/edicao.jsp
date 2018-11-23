@@ -12,8 +12,7 @@
 		</div>
 	</c:if>
 	<c:url value="/produto/editar" var="action" />
-	<form:form action="${action }" method="post"
-		commandName="produto">
+	<form:form action="${action }" method="post" commandName="produto">
 		<form:hidden path="codigo" />
 		<div class="form-group">
 			<form:label path="nomeProduto">Nome do produto</form:label>
@@ -32,7 +31,7 @@
 			<form:input path="preco" cssClass="form-control" />
 		</div>
 		<div class="d-flex flex-row-reverse">
-		<input type="submit" value="Cadastrar" class="btn btn-primary">
+			<input type="submit" value="Cadastrar" class="btn btn-primary">
 		</div>
 	</form:form>
 </tags:template>

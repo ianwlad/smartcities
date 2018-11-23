@@ -27,8 +27,8 @@
 				<td>${e.nomeMarca}</td>
 				<td>${e.medida }</td>
 				<td>${e.preco }</td>
-				<td><c:url value="/produto/editar/${e.codigo }"
-						var="link" /> <a href="${link}" class="btn btn-primary"> <i
+				<td><c:url value="/produto/editar/${e.codigo }" var="link" />
+					<a href="${link}" class="btn btn-primary"> <i
 						class="fas fa-edit"></i>
 				</a> <a href="excluir/${e.codigo}" class="btn btn-danger"> <i
 						class="fas fa-trash"></i></a></td>
