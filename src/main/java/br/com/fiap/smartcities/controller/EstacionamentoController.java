@@ -21,7 +21,6 @@ public class EstacionamentoController {
 	private EstacionamentoDAO dao;
 	
 	@Transactional
-	//@PostMapping("excluir")
 	@GetMapping("excluir/{id}")
 	public String excluir(@PathVariable("id")  int id, RedirectAttributes redirect) {
 		try {
@@ -64,14 +63,14 @@ public class EstacionamentoController {
 	@Transactional
 	@PostMapping("cadastrar")
 	public ModelAndView processarForm(Estacionamento estacionamento, RedirectAttributes redirect) {
-	  try {
-		dao.cadastrar(estacionamento);
-	  }catch(Exception e) {
-		  e.printStackTrace();
-	    return new ModelAndView("estacionamento/cadastro");
-	  }
-	  redirect.addFlashAttribute("msg", "Estacionamento cadastrado!");
-	  return new ModelAndView("redirect:/estacionamento/cadastrar");	  
+		try {
+			dao.cadastrar(estacionamento);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return new ModelAndView("estacionamento/cadastro");
+		}
+		redirect.addFlashAttribute("msg", "Estacionamento cadastrado!");
+		return new ModelAndView("redirect:/estacionamento/cadastrar");
 	}
 
 

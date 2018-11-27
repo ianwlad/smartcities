@@ -8,7 +8,11 @@
 <tags:template title="Lista de Estacionamento">
 
 	<h1>Estacionamentos cadastrados</h1>
-	${msg }
+	<c:if test="${ not empty msg }">
+		<div class="alert alert-success">
+			<strong>Successo!</strong> ${msg }
+		</div>
+	</c:if>
 	<table class="table">
 		<tr>
 			<th>Nome</th>
@@ -24,10 +28,10 @@
 				<td>${e.vagas }</td>
 				<td>${e.preco }</td>
 				<td><c:url value="/estacionamento/editar/${e.codigo }"
-						var="link" /> <a href="${link}" class="btn btn-primary">Editar</a>
-					 <a
-					href="excluir/${e.codigo}" class="btn btn-danger">Remover</a>
-				</td>
+						var="link" /> <a href="${link}" class="btn btn-primary"> <i
+						class="fas fa-edit"></i>
+				</a> <a href="excluir/${e.codigo}" class="btn btn-danger"> <i
+						class="fas fa-trash"></i></a></td>
 			</tr>
 		</c:forEach>
 	</table>

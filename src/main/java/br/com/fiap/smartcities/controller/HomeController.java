@@ -15,5 +15,15 @@ public class HomeController {
 	public String contato() {
 		return "home/contato";
 	}
+	
+	@GetMapping("/login")
+	public String login() {
+		return "home/login";
+	}
+	
+	@GetMapping("logar")
+	public void logar() {
+		
+	}
 
 }

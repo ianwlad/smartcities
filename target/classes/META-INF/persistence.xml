@@ -5,11 +5,11 @@
 		<properties>
 			<property name="hibernate.show_sql" value="true"/>
 			<property name="hibernate.hbm2ddl.auto" value="update"/>
-			<property name="hibernate.dialect" value="org.hibernate.dialect.Oracle12cDialect"/>
-			<property name="javax.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver"/>
-			<property name="javax.persistence.jdbc.user" value="rm78820"/>
-			<property name="javax.persistence.jdbc.password" value="010688"/>
-			<property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@oracle.fiap.com.br:1521:orcl"/>
+			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
+			<property name="javax.persistence.jdbc.driver" value="oracle.jdbc.Driver"/>
+			<property name="javax.persistence.jdbc.user" value="id7992778_commiters"/>
+			<property name="javax.persistence.jdbc.password" value="fiapon123"/>
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/id7992778_spatula"/>
 		</properties>	
 	</persistence-unit>
 </persistence>
