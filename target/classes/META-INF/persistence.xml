@@ -7,9 +7,9 @@
 			<property name="hibernate.hbm2ddl.auto" value="update"/>
 			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
 			<property name="javax.persistence.jdbc.driver" value="oracle.jdbc.Driver"/>
-			<property name="javax.persistence.jdbc.user" value="root"/>
-			<property name="javax.persistence.jdbc.password" value="qwer1234"/>
-			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/smartcities"/>
+			<property name="javax.persistence.jdbc.user" value="id7992778_commiters"/>
+			<property name="javax.persistence.jdbc.password" value="fiapon123"/>
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/id7992778_spatula"/>
 		</properties>	
 	</persistence-unit>
 </persistence>
